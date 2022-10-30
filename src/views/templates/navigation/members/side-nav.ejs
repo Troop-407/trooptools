@@ -1,0 +1,132 @@
+<div class="hamburger">
+  <i class="fa-solid fa-bars fa-hamburger-nav"></i>
+  <p class="nav-logo-text" style="color: black; text-align: center; width: 100%;">trooptools.</p>
+  <div class="dropdown">
+    <img onclick="dropdown()" src="https://i.etsystatic.com/24193269/r/il/67df7a/2588993054/il_fullxfull.2588993054_cwib.jpg" class="dropbtn" />
+    <div id="pfpdropdownNav" class="dropdown-content">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <style>
+    .dropbtn {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: #2980B9;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+      z-index: 1;
+      right: 27px;
+      top: 76px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown a:hover {background-color: #ddd;}
+
+    .show {display: block;}
+  </style>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    // may or may not have copied this because front end dev sucks lol
+    function dropdown() {
+      document.getElementById("pfpdropdownNav").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+</div>
+<nav class="nav">
+  <header class="nav-header">
+    <img  width="40px" onclick="window.location.href='/troop/home'" src="/static/media/website/logos/trooptools.svg" alt="" class="nav-logo">
+    <p class="nav-logo-text">trooptools.</p>
+  </header>
+  <section class="nav-section">
+    <i class="fa-solid fa-house"></i>
+    <div class="nav-section-text-box">Home</div>
+  </section>
+  <section class="nav-section">
+    <i class="fa-solid fa-flag"></i>
+    <div class="nav-section-text-box">PatrolBoard</div>
+  </section>
+  <section class="nav-section">
+    <i class="fa-solid fa-user-group"></i>
+    <div class="nav-section-text-box">TroopBoard</div>
+  </section>
+  <section class="nav-section">
+    <i class="fa-solid fa-message"></i>
+    <div class="nav-section-text-box">TroopChat</div>
+  </section>
+  <section class="nav-section">
+    <i class="fa-solid fa-calendar"></i>
+    <div class="nav-section-text-box">Calendar</div>
+  </section>
+  <section class="nav-section">
+    <i class="fa-solid fa-wand-sparkles"></i>
+    <div class="nav-section-text-box">Roles</div>
+  </section>
+  <script>
+    const toggleNavBtn = document.querySelector('.fa-hamburger-nav');
+    const navigationMenu = document.querySelector('.nav');
+    var lastToggle;
+    toggleNavBtn.addEventListener('click', (event) => {
+      // if nav menu display is set to flex, then make it none
+      if(navigationMenu.style.display == "flex") {
+        navigationMenu.style.display = "none"
+        lastToggle = "none"
+        toggleNavBtn.style.color = "black"
+        return;
+      } 
+      // if nav menu display is set to none, then make it flex
+      navigationMenu.style.display = "flex"
+      lastToggle = "flex"
+      toggleNavBtn.style.color = "white"
+    })
+    window.addEventListener('resize', () => {
+      // if the window size is 500px greater than 500px make the desktop nav displasy flex
+      if(window.innerWidth > 500) {
+        navigationMenu.style.display = "flex"
+        return
+      } 
+
+      navigationMenu.style.display = lastToggle
+    })
+  </script>
+</nav>

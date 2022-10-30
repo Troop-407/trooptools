@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- main header -->
+    <%- include('../templates/headers/public.ejs') %>
+    <!-- styles -->
+    <link rel="stylesheet" href="/static/styles/global/main.css">
+    <link rel="stylesheet" href="/static/styles/public/login/login.css">
+    <!-- title -->
+    <title>TroopTools | Login</title>
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <div class="logo-container">
+                <img src="/static/media/website/logos/bsa-logo-1.png" alt="TroopTools Logo" class="bsa-logo">
+            </div>
+            <a href="/" class="home-link home-btn"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="1" d="M0,160L80,133.3C160,107,320,53,480,64C640,75,800,149,960,170.7C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+            <div class="login-wrapper">
+                <div class="login-header">
+                    <div class="trooptools-logo-circle">
+                        <img src="https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png" alt="" class="trooptools-logo">
+                    </div>
+                    <div class="login-header-text-wrapper">
+                        <p class="login-header-text login-large">Troop<span class="login-span">Tools</span></p>
+                        <p class="login-header-text login-small">Troop management made easy</p>
+                    </div>
+                </div>
+                <p><%= errorMessage %></p>
+                <div class="login-body">
+                    <button onclick='const registerWindow = window.open("/register", "", "width=800,height=500")' class="login-form-btn" id="signup">Signup</button>
+                    <button onclick='const loginWindow = window.open("/login", "", "width=800,height=500")' class="login-form-btn" id="login">Login</button>
+                </div>
+                <div class="login-footer">
+                    <div class="inner-footer">
+                        <div class="login-footer-section fs-left">
+                            <a href="/docs/privacy" class="footer-text">Privacy</a>
+                        </div>
+                        <div class="login-footer-section fs-right">
+                            <a href="#" class="footer-text">by Austin Wahl</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.addEventListener('message', function(e) {
+                // redirects user to dashboard
+                // while they could navigate and bypass login 
+                // access will be denyed because of a failed JWT authentication
+                window.location.href="/greetings"
+            });
+        </script>
+    </div>
+</body>
+</html>

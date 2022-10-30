@@ -1,0 +1,99 @@
+<div class="app">
+    <div class="header">
+        <div class="logo-container">
+            <img src="/static/media/website/logos/bsa-logo-1.png" alt="TroopTools Logo" class="bsa-logo">
+        </div>
+        <a href="/" class="home-link home-btn"><i class="fa-solid fa-house"></i></a>
+    </div>
+    <div class="center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="1" d="M0,160L80,133.3C160,107,320,53,480,64C640,75,800,149,960,170.7C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+        <div class="login-wrapper">
+            <div class="login-header">
+                <div class="trooptools-logo-circle">
+                    <img src="https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png" alt="" class="trooptools-logo">
+                </div>
+                <div class="login-header-text-wrapper">
+                    <p class="login-header-text login-large">Troop<span class="login-span">Tools</span></p>
+                    <p class="login-header-text login-small">Troop management made easy</p>
+                </div>
+            </div>
+            <style>
+                .error-statement {
+                    font-size: 11px;
+                    color: rgb(255, 101, 101);
+                }
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                }
+                
+            </style>
+            <div class="login-body">
+                <form action="/register" method="post">
+                    <div class="rendered-form">
+                        <div class="formbuilder-text form-group field-email">
+                            <label for="email" class="formbuilder-text-label">Email<span class="formbuilder-required">*</span></label>
+                            <input type="text" value="<%- (formData && formData.email) ? formData.email : null %>" placeholder="Enter an email here" class="form-control" name="email" id="email">
+                            <% if(errorMessage && errorMessage.toLowerCase().includes("email")) { %>
+                                <p class="error-statement"><%= errorMessage %></p>
+                            <% } %>
+                        </div>
+                        <div class="formbuilder-text form-group field-password">
+                            <label for="password" class="formbuilder-text-label">Password<span class="formbuilder-required">*</span></label>
+                            <input type="password" value="<%- (formData && formData.password) ? formData.password : null %>" placeholder="Enter a password here" class="form-control" name="password" id="password">
+                            <% if(errorMessage && errorMessage.toLowerCase().includes("password")) { %>
+                                <p class="error-statement"><%= errorMessage %></p>
+                            <% } %>
+                        </div>
+                        <div class="formbuilder-text form-group field-firstName">
+                            <label for="firstName" class="formbuilder-text-label">First Name<span class="formbuilder-required">*</span></label>
+                            <input type="text" value="<%- (formData && formData.firstName) ? formData.firstName : null %>" placeholder="Enter your first name" class="form-control" name="firstName">
+                            <% if(errorMessage && errorMessage.toLowerCase().includes("first name")) { %>
+                                <p class="error-statement"><%= errorMessage %></p>
+                            <% } %>
+                        </div>
+                        <div class="formbuilder-text form-group field-lastName">
+                            <label for="lastName" class="formbuilder-text-label">Last Name<span class="formbuilder-required">*</span></label>
+                            <input type="text" value="<%- (formData && formData.lastName) ? formData.lastName : null %>" placeholder="Enter your last name here" class="form-control" name="lastName">
+                            <% if(errorMessage && errorMessage.toLowerCase().includes("last name")) { %>
+                                <p class="error-statement"><%= errorMessage %></p>
+                            <% } %>
+                        </div>
+                        <div class="formbuilder-text form-group field-username">
+                            <label for="username" class="formbuilder-text-label">Username</label>
+                            <input type="text" value="<%- (formData && formData.username) ? formData.username : null %>" placeholder="Enter a username here" class="form-control" name="username">
+                            <% if(errorMessage && errorMessage.toLowerCase().includes("username")) { %>
+                                <p class="error-statement"><%= errorMessage %></p>
+                            <% } %>
+                        </div>
+                        <div class="formbuilder-button form-group field-register">
+                            <button type="submit" class="submit-form-btn btn-default btn" name="register" value="Finish" id="register">Finish</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="login-footer">
+                <div class="inner-footer">
+                    <div class="login-footer-section fs-left">
+                        <a href="/docs/privacy" class="footer-text">Privacy</a>
+                    </div>
+                    <div class="login-footer-section fs-right">
+                        <a href="#" class="footer-text">by Austin Wahl</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('message', function(e) {
+        // redirects user to dashboard
+        // while they could navigate and bypass login 
+        // access will be denyed because of a failed JWT authentication
+        window.location.href="/greetings"
+    });
+</script>

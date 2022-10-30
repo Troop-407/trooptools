@@ -1,0 +1,12 @@
+THIS WEEK
+Create roles API and write documentation
+    - create
+    - update
+    - delete
+    - read
+create roles internal routes and UI for creating custom roles
+-------------------------------------------------------------
+NEXT WEEK
+Create image uploading API
+Create account create UI and code it
+incorporate image uploading API into account creation page

@@ -1,0 +1,194 @@
+@import url('../../global/global.vars.css');
+
+.app {
+    position: relative;
+    background-image: url("/static/media/website/logos/mtn_bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.header {
+    width: 100%;
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.logo-container {
+    width: 50px;
+    height: 50px;
+    background: white;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    margin-right: auto;
+}
+.bsa-logo {
+    width: 100%;
+    height: 100%;
+}
+.home-link::after {
+    content: "Home";
+    padding: 5px;
+}
+.home-btn {
+    width: 120px;
+    height: 45px;
+    border-radius: 45px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+.home-link {
+    text-decoration: none;
+    color: var(--accent-2)
+}
+/* wrapper */
+.center {
+    width: 100%;
+    height: calc(100% - 70px);
+    display: grid;
+    place-items: center;
+}
+.login-wrapper {
+    height: clamp(200px, 70%, 500px);
+    width: clamp(200px, 430px, 430px);
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+.login-header {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+.trooptools-logo-circle {
+    min-width: 130px;
+    min-height: 130px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+.trooptools-logo {
+    width: 100%;
+    height: 100%;
+}
+.login-header-text-wrapper {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.login-header-text {
+    color: black;
+}
+.login-span {
+    color: var(--accent-2);
+}
+.login-large {
+    font-size: calc(20px + .3vw);
+}
+.login-small {
+    font-size: 12px;
+}
+/* body */
+.login-body {
+    height: calc(100% - 120px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+}
+.login-footer {
+    height: 20px;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.login-footer-section {
+    width: 100px;
+}
+.footer-text {
+    color: var(--grey);
+    font-size: 10px;
+    text-decoration: none;
+}
+.inner-footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.fs-left {
+    margin-right: auto;
+}
+svg {
+    position: absolute;
+    top: 0;
+    display: none;
+}
+.login-form-btn {
+    width: clamp(200px, 290.66px, 290.66px);
+    height: 60px;
+    border-radius: 40px;
+    outline: none;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+#signup {
+    background: var(--accent-1);
+}
+#login {
+    background: var(--accent-2);
+}
+@media(max-width: 510px) {
+    .home-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .home-link::after {
+        content: none;
+        padding: 0px;
+    }
+    .login-wrapper {
+        top: -40px;
+    }
+    .center {
+        height: 60%;
+        bottom: 0;
+        position: absolute;
+        background: white;
+    }
+    .login-wrapper {
+        width: 100%;
+    }
+    svg {
+        display: block;
+        top: -69px;
+        /* heh nice ;) */
+    }
+    .login-footer {
+        position: static;
+        margin-top: 50px;
+    }
+    .login-footer-section {
+        width: 0px;
+    }
+}
